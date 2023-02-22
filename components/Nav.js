@@ -8,18 +8,18 @@ export default function Nav() {
     const [user, loading] = useAuthState(auth);
 
     return (
-        <nav className='flex justify-between items-center py-10'>
+        <nav className='flex items-center justify-between py-10 mb-4'>
             <Link href='/'>
-                <button className='text-lg font-medium'>Big Minds</button>
+                <button className='p-4 text-lg font-medium border-4 rounded-full'>Master Minds</button>
             </Link>
             <ul className='flex items-center gap-10'>
                 {!user && (
-                <Link href={"/auth/login"} className='py-2 px-4 text-sm bg-cyan-500 text-white rounded-lg font-medium ml-8'>Join Now</Link>
+                <Link href={"/auth/login"} className='px-4 py-2 ml-8 text-sm font-medium text-white rounded-lg bg-cyan-500'>Join Now</Link>
                 )}
                 {user && (
                     <div className='flex items-center gap-6'>
                         <Link href='/post'>
-                        <button className='font-medium bg-cyan-500 text-white py-2 px-4 rounded-mg textx-sm'>Post</button>
+                        <button className='px-4 py-2 font-medium text-white bg-cyan-500 hover:bg-cyan-700 rounded-mg textx-sm'>Post</button>
                         </Link>
                         <Link href='/dashboard'>
                             <img className='w-12 rounded-full cursor-pointer' src={user.photoURL} alt='User image'/>
